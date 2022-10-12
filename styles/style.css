@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url(/images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.form-div {
+    padding: 50px 100px 0 100px;
+}
+
+.form-div h1 {
+    margin-top: 80px;
+    font-size: 5em;
+    max-width: 490px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    color: hsl(0, 6%, 24%);
+}
+
+.form-div h1 span {
+    font-weight: 300;
+    color: hsl(0, 36%, 70%);
+}
+
+
+.form-div p {
+    max-width: 430px;
+    line-height: 25px;
+    margin-top: 20px;
+    color: hsl(0, 36%, 70%);
+}
+
+.photo-div {
+    max-height: 100%;
+}
+
+
+/* Email input */
+
+form {
+    display: flex;
+}
+
+input {
+    margin-top: 40px;
+    padding-left: 30px;
+    height: 55px;
+    width: 400px;
+    border: 1px solid hsl(0, 41%, 85%);
+    border-radius: 50px;
+    background: none;
+}
+
+input::placeholder {
+    font-size: 1.1em;
+    color: hsl(0, 47%, 80%);
+}
+
+input:focus {
+    outline: 1px solid hsl(0, 86%, 80%);
+}
+
+.error {
+    visibility: hidden;
+    display: block;
+    margin: 10px 0 0 30px;
+    color: hsl(0, 60%, 72%);
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.error-icon {
+    background-image: url(/images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: center right 60px;
+}
+
+.submit-button button {
+    margin-top: 40px;
+    height: 55px;
+    width: 90px;
+    border: none;
+    border-radius: 50px;
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    right: 55px;
+}
+
+.submit-button button:hover {
+    cursor: pointer;
+    background-image: linear-gradient(135deg, hsl(0, 90%, 92%), hsl(0, 75%, 85%));
+}
+
+
+
+
+
+
+
+/* Responsivity */
+
+@media (max-width: 550px) {
+    
+    .logo img {
+        display: none;
+    }
+
+    .photo-div::before {
+        content: url(/images/logo.svg);
+        display: block;
+        margin: 30px 0 30px 30px;
+    }
+
+    main {
+        flex-direction: column-reverse;
+    }
+
+    .photo-div img {
+        display: none;
+    }
+
+    .photo-div::after {
+        content: url(/images/hero-mobile.jpg);
+        display: block;
+        margin: 0 auto;
+    }
+
+    .form-div {
+        padding: 30px;
+    }
+    
+    .form-div h1 {
+        margin: 0 auto;
+        font-size: 2em;
+        text-align: center;
+        max-width: 300px;
+    }
+
+    .form-div p {
+        margin: 0 auto;
+        max-width: 300px;
+        font-size: 0.8em;
+        text-align: center;
+        line-height: 25px;
+        margin-top: 20px;
+        color: hsl(0, 36%, 70%);
+    }
+
+    input {
+        margin: 30px auto;
+        width: 90%;
+        max-width: auto;
+    }
+
+    .error-icon {
+        background-position: center right 85px;
+    }
+
+    .submit-button button {
+        position: absolute;
+        margin-top: 30px;
+        z-index: 2;
+        right: 30px;
+    }
+
+}
